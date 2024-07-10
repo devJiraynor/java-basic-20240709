@@ -132,6 +132,72 @@ public class DataType {
 		System.out.println(example1[1]);
 		System.out.println(example2[1]);
 		
+		char[] chars1 = {'a', 'p', 'p', 'l', 'e'};
+		System.out.println(chars1);
+		
+		// String : 문자의 배열(문자열)을 표현하는데 사용되는 참조형 데이터 타입
+		// 선언
+		// String 변수명;
+		// 생성
+		// new String();
+		// 초기화
+		// 변수명 = "문자열";
+		String string1;
+		string1 = new String();
+		string1 = "apple";
+		System.out.println(string1);
+		
+		// 문자열(String)의 주요 기능
+		String statement = "  My name is loki  ";
+		
+		// 1. 문자열 결합
+		// + 혹은 concat(문자열)으로 두 문자열을 연결할 수 있음
+		System.out.println(statement + "@@@");
+		System.out.println(statement.concat("!!!"));
+		
+		// 2. 문자열 비교
+		// equals(문자열): 두 문자열이 동등한지 비교
+		// compareTo(문자열): 두 문자열을 사전순으로 비교 (대소문자 구분)
+		// compareToIgnoreCase(문자열): 두 문자열을 사전순으로 비교 (대소문자 구분X)
+		System.out.println(statement.equals("  My name is loki  "));
+		System.out.println(statement.compareTo("  My name is loki  "));
+		
+		// 3. 문자열 길이
+		// length(): 문자열의 길이를 반환
+		System.out.println(statement.length());
+		
+		// 4. 문자열 변환
+		// toUpperCase(): 모든 문자를 대문자로 변경
+		// toLowerCase(): 모든 문자를 소문자로 변경
+		// trim(): 문자열의 앞뒤 공백을 제거
+		System.out.println(statement.toUpperCase());
+		System.out.println(statement.toLowerCase());
+		System.out.println(statement.trim());
+		
+		// 5. 문자열 찾기
+		// indexOf(문자열): 찾고자하는 문자열의 처음 찾은 위치의 인덱스 번호를 반환
+		// lastIndexOf(문자열): 찾고자하는 문자열의 마지막 찾은 위치의 인덱스 번호를 반환
+		statement = "내가 그린 기린 그림은 잘 그린 기린 그림이고 네가 그린 기린 그림은 잘 못그린 기린 그림이다.";
+		System.out.println(statement.indexOf("기린"));
+		System.out.println(statement.indexOf("사자"));
+		System.out.println(statement.lastIndexOf("기린"));
+		System.out.println(statement.lastIndexOf("사자"));
+		
+		// 6. 부분 문자열
+		// substring(시작인덱스), substring(시작인덱스, 종료인덱스): 문자열을 원하는 크기만큼 추출
+		System.out.println(statement.substring(26));
+		System.out.println(statement.substring(26, 31));
+		
+		
+		
+		
+
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
 	}
 
 }
