@@ -86,6 +86,52 @@ public class DataType {
 		short short2 = (short) char3;
 		int int2 = char3;
 		
+		
+		// 배열 : 동일한 타입의 변수를 묶어서 저장하는 컨테이너
+		// new 연산자를 이용해서 생성을 해야함
+		// 한번 생성된 배열의 크기는 변경할 수 없음
+		
+		// 배열 변수 선언
+		// 데이터타입[] 배열변수명;
+		// 배열 생성
+		// new 데이터타입[배열의길이];
+		int[] numbers;
+		// numbers = 3;
+		numbers = new int[5];
+		
+		int[] numbers2 = {1, 2, 3, 4, 5};
+		int[] numbers3 = new int[] {1, 2, 3, 4, 5};
+		
+		System.out.println(numbers);
+		System.out.println(numbers2);
+		System.out.println(numbers3);
+		
+		// 배열의 요소에 접근할 때는 '인덱스' 사용
+		// 인덱스는 0번부터 시작, 마지막 인덱스는 길이의 -1번
+		int item = numbers3[2];
+		System.out.println(item);
+		numbers3[0] = 9;
+		
+		item = numbers3[0];
+		System.out.println(item);
+		
+		// 인덱스 범위를 초과하는 인덱스에 접근할 시 예외발생
+		// System.out.println(numbers3[99]);
+		
+		// 배열의 길이를 확인하고자 할땐 .length를 사용
+		System.out.println(numbers3.length);
+		
+		
+		int[] example1 = new int[] {1, 2, 3};
+		int[] example2 = example1;
+		
+		System.out.println(example1);
+		System.out.println(example2);
+		
+		example1[1] = 99;
+		System.out.println(example1[1]);
+		System.out.println(example2[1]);
+		
 	}
 
 }
