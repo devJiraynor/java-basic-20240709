@@ -121,6 +121,34 @@ public class Operator {
 		booleanResult = a >= c;
 		System.out.println(booleanResult);
 		
+		// 논리 연산자 : 피연산자가 모두 논리형태, 피연산자를 조합 함
+		// 논리 AND 연산자 : && - 좌항과 우항이 모두 true이면 true, 하나라도 false이면 false
+		booleanResult = false && false;
+		System.out.println(booleanResult);
+		booleanResult = (a > b) && (a <= c);
+		System.out.println(booleanResult);
+		
+		// 논리 OR 연산자 : || - 좌항과 우항 중 하나라도 true이면 true, 모두 false이면 false
+		booleanResult = true || false;
+		System.out.println(booleanResult);
+		booleanResult = (a == b) || (c == d);
+		System.out.println(booleanResult);
+		
+		// 논리 NOT 연산자 : ! - 피연산자가 true이면 false, false이면 true
+		System.out.println(!booleanResult);
+		
+		booleanResult = (a < b) && (++a > 0);
+		System.out.println(a);
+		
+		booleanResult = (a > b) || (++a > 0);
+		System.out.println(a);
+		
+		// 삼항 연산자 : 조건에 따라 지정한 결과를 반환하는 연산자
+		// 조건(논리식) ? 참일때결과 : 거짓일때결과
+		int age = 10;
+		
+		String stringResult = age > 19 ? "성인" : "미성년자";
+		System.out.println(stringResult);
 	}
 
 }
