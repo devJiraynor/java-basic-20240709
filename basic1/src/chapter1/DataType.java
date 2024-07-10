@@ -54,6 +54,38 @@ public class DataType {
 		double double1 = 3.14159265358979323846;
 		System.out.println(double1);
 		
+		// 문자형 데이터 타입 : 문자 하나를 저장할 수 있는 데이터 타입
+		
+		// char : 2byte (16bit)의 크기를 가지는 문자형 데이터 타입
+		// 0 ~ 65,535
+		// 문자를 리터럴로 표현할 땐 ''로 묶어서 표현
+		char char1 = 'a';
+		char char2 = 97;
+		
+		System.out.println(char1);
+		System.out.println(char2);
+		
+		// 논리형 데이터 타입 : 참과 거짓 값을 가지는 데이터 타입
+		
+		// boolean : 1byte (8bit)의 크기를 가지는 논리형 데이터 타입
+		// true, false
+		boolean boolean1 = true;
+		boolean boolean2 = false;
+		
+		
+		// 형변환 : 데이터 타입이 서로 다른 변수를 옮겨 닮는 것
+
+		// 자동 형변환 : 작은 데이터 타입의 변수를 큰 데이터 타입의 변수에 옮겨 닮을 때 발생
+		// 강제 형변환 : 큰 데이터 타입의 변수를 작은 데이터 타입의 변수에 옮겨 닮을 때 발생
+		
+		int number = 300;
+		long long2 = number;
+		number = (int) long2;
+		
+		char char3 = 100;
+		short short2 = (short) char3;
+		int int2 = char3;
+		
 	}
 
 }
