@@ -35,9 +35,29 @@ public class ControllFor {
 //		System.out.println(fruits[1]);
 //		System.out.println(fruits[2]);
 		
-		for (int index = 0; index <= 2; index++) {
+		for (int index = 0; index < fruits.length; index++) {
 			System.out.println(fruits[index]);
 		}
+		
+		for (int index = 0; index < fruits.length; index++) {
+			fruits[index] += " add";
+		}
+		
+		// foreach: 컬렉션(배열)의 각 요소를 하나씩 변수에 복사하여 사용하는 반복문
+		// 컬렉션 실제 요소에 대해서 읽기전용, 복사한 요소를 변경하더라도 실제 요소에는 영향이 없음
+		for (String fruit: fruits) {
+			System.out.println(fruit);
+		}
+		
+		for (String fruit: fruits) {
+			fruit += " add";
+		}
+		
+		for (String fruit: fruits) {
+			System.out.println(fruit);
+		}
+		
+		
 	}
 
 }
