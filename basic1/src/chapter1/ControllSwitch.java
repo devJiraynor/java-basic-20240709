@@ -32,12 +32,26 @@ public class ControllSwitch {
 		System.out.print("정수 : ");
 		int number = scanner.nextInt();
 		
-		{
+		switch(number) {
+			// number가 0이면 여기서부터
+		case 0:
 			System.out.println("A");
+			// number가 1이면 여기서부터
+		case 1:
 			System.out.println("B");
+			// number가 2이면 여기서부터
+		case 2:
 			System.out.println("C");
+			// number가 0,1,2이면 여기까지
+			break;
+			// number가 3이면 여기서부터
+		case 3:
 			System.out.println("D");
+			// number가 4이면 여기서부터
+		case 4:
 			System.out.println("E");
+			// number가 0-4가 아니면 여기서부터
+		default:
 			System.out.println("F");
 		}
 		
