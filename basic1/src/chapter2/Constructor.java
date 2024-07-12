@@ -33,13 +33,23 @@ class Human1 {
 		address = "부산";
 	}
 	
-	Human1(String name1, int age1, String gender1) {
+	Human1(String name, int age, String gender) {
 		// 의존성을 외부에서 주입하는 행위
-		name = name1;
-		age = age1;
-		gender = gender1;
 		
-		address = "부산";
+		// this : 현재 자기 자신의 인스턴스를 지칭하는 키워드
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		
+		this.address = "부산";
+	}
+	
+	// 생성자를 이용한 인스턴스 복사
+	Human1(Human1 human1) {
+		name = human1.name;
+		age = human1.age;
+		gender = human1.gender;
+		address = human1.address;
 	}
 	
 	void great() {
@@ -62,6 +72,21 @@ public class Constructor {
 		System.out.println(human3.name);
 		
 		Human1 human4 = new Human1();
+		
+		// 얕은 복사 : 변수에 기억된 주소를 복사하는 행위
+		Human1 human5 = human3;
+		// 깊은 복사 : 인스턴스의 각 속성 값을 직접 복사하는 행위
+		Human1 human6 = new Human1(human3);
+//		human6.name = human3.name;
+//		human6.age = human3.age;
+//		human6.gender = human3.gender;
+//		human6.address = human3.address;
+		
+		human3.name = "이성계";
+		
+		System.out.println(human3.name);
+		System.out.println(human5.name);
+		System.out.println(human6.name);
 		
 	}
 
