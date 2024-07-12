@@ -5,8 +5,16 @@ package chapter2;
 class ExampleClass1 {
 	// 속성 : 클래스가 가질수 있는 정보나 상태
 	// 일반적으로 변수로 표현
+	
+	// 인스턴스 변수 : 각 인스턴스마다 독립적으로 값을 가지는 변수
+	// 반드시 인스턴스가 생성된 후에 사용할 수 있음
 	int attribute1;
 	double attribute2;
+	
+	// 클래스 변수 : 해당 클래스로 생성된 모든 인스턴스가 공유하는 변수
+	// 필드 앞에 static 키워드를 사용하여 지정
+	// 인스턴스 없이 클래스로 직접 접근할 수 있음
+	static int staticAttribute;
 	
 	// 기능 : 클래스가 가질수 있는 행동이나 작업 (메서드)
 	
@@ -75,6 +83,41 @@ class SmartPhone {
 	
 }
 
+// 한국인
+// =속성=
+// -이름
+// -나이
+// -국적
+
+class Korean {
+	String name;
+	int age;
+	static String nationality = "대한민국";
+}
+
+// 삼각함수
+// 빗변 구하기
+// 둘레 구하기
+// sin 구하기
+// cos 구하기
+// tan 구하기
+
+class TriangleMath {
+	
+	double getHypotenuse(double bottom, double height) {
+		
+		if (bottom <= 0 || height <= 0) {
+			return 0;
+		}
+		
+		double hypotenuse2 = Math.pow(bottom, 2) + Math.pow(height, 2);
+		double hypotenuse = Math.sqrt(hypotenuse2);
+		
+		return hypotenuse;
+	}
+	
+}
+
 public class ClassAndObject {
 
 	public static void main(String[] args) {
@@ -98,6 +141,18 @@ public class ClassAndObject {
 		int methodResult = instance1.method1(5);
 		System.out.println(methodResult);
 		
+		instance1.staticAttribute = 10;
+		System.out.println(instance1.staticAttribute);
+		System.out.println(instance2.staticAttribute);
+		
+		instance2.staticAttribute = 33;
+		System.out.println(instance1.staticAttribute);
+		System.out.println(instance2.staticAttribute);
+		System.out.println(ExampleClass1.staticAttribute);
+		
+		System.out.println("=================================");
+		
+		
 		SmartPhone iphone1 = new SmartPhone();
 		SmartPhone galaxy1 = new SmartPhone();
 		
@@ -111,6 +166,32 @@ public class ClassAndObject {
 		System.out.println(galaxy1.manufacturer);
 		System.out.println(galaxy1.powerStatus);
 		
+		iphone1.printInformation();
+		galaxy1.printInformation();
+		
+		iphone1.sendMessage("010-1111-2222", "안녕하세요.");
+		
+		Korean korean1 = new Korean();
+		Korean korean2 = new Korean();
+		
+		korean1.name = "홍길동";
+		korean1.age = 20;
+		
+		korean2.name = "이영희";
+		korean2.age = 30;
+		
+		System.out.println(korean1.nationality);
+		System.out.println(korean2.nationality);
+		
+		korean1.nationality = "한국";
+		System.out.println(korean1.nationality);
+		System.out.println(korean2.nationality);
+		
+		TriangleMath triangeMath = new TriangleMath();
+		
+		double bottom = 3;
+		double height = 4;
+		double hypotenuse = triangeMath.getHypotenuse(bottom, height);
 	}
 
 }
