@@ -20,10 +20,22 @@ class ExampleClass1 {
 	
 	// [접근제어자] 반환타입 메서드명 (매개변수타입 매개변수명[, ...])
 	// { 메서드 기능 구현 }
+	
+	// 인스턴스 메서드 : 인스턴스를 생성한 후 사용할 수 있는 메서드
+	// 인스턴스 필드를 사용하는 기능에 대해서 인스턴스 메서드를 사용
 	int method1 (int arg1) {
 		// 기능 구현
 		// 반환타입이 void가 아니면 반드시 return으로 결과값을 반환해야 함
 		return arg1 * arg1;
+	}
+	
+	// 클래스 메서드 : 인스턴스 생성없이 클래스로만 호출 가능한 메서드
+	// 반환타입 앞에 static 키워드를 붙여서 사용
+	// 인스턴스 필드를 사용하지 않는 메서드에 주로 사용됨
+	// 인스턴스 필드를 사용할 수 없음
+	static void staticMethod() {
+		// System.out.println(attribute1);
+		// method1(5);
 	}
 }
 
@@ -99,12 +111,20 @@ class Korean {
 // 빗변 구하기
 // 둘레 구하기
 // sin 구하기
-// cos 구하기
-// tan 구하기
 
 class TriangleMath {
 	
-	double getHypotenuse(double bottom, double height) {
+	// PI, getCircleArea(double)은 SRP 원칙에 위배됨
+	static final double PI = 3.1415;
+	
+	static double getCircleArea(double radius) {
+		if (radius <= 0) return 0;
+		
+		double area = radius * radius * PI;
+		return area;
+	}
+	
+	static double getHypotenuse(double bottom, double height) {
 		
 		if (bottom <= 0 || height <= 0) {
 			return 0;
@@ -114,6 +134,22 @@ class TriangleMath {
 		double hypotenuse = Math.sqrt(hypotenuse2);
 		
 		return hypotenuse;
+	}
+	
+	static double getCircumference(double bottom, double height, double hypotenuse) {
+		
+		if (bottom <= 0 || height <= 0 || hypotenuse <= 0) return 0;
+		
+		double circumference = bottom + height + hypotenuse;
+		return circumference;
+	}
+	
+	static double getSin(double hypotenuse, double height) {
+		
+		if (hypotenuse <= 0 || height <= 0) return 0;
+		
+		double sin = height / hypotenuse;
+		return sin;
 	}
 	
 }
@@ -187,11 +223,11 @@ public class ClassAndObject {
 		System.out.println(korean1.nationality);
 		System.out.println(korean2.nationality);
 		
-		TriangleMath triangeMath = new TriangleMath();
-		
 		double bottom = 3;
 		double height = 4;
-		double hypotenuse = triangeMath.getHypotenuse(bottom, height);
+		double hypotenuse = TriangleMath.getHypotenuse(bottom, height);
+		
+		System.out.println(hypotenuse);
 	}
 
 }
