@@ -20,6 +20,7 @@ class ExampleClass2 {
 	
 	void instanceMethod() {
 		int instanceMethodVariable = 10;
+		ExampleClass2 instance = new ExampleClass2();
 	}
 	
 	static void staticMethod() {
@@ -31,6 +32,42 @@ public class JVM {
 
 	public static void main(String[] args) {
 		
+		int localVariable1 = 20;
+		double localVariable2 = 3.5;
+		
+		if (localVariable1 > 0) {
+			int codeBlock1 = 30;
+			localVariable1 = codeBlock1;
+		}
+		
+		ExampleClass2 instance1 = new ExampleClass2();
+		ExampleClass2 instance2 = new ExampleClass2();
+		
+		instance1.instanceVariable = 10;
+		instance2.instanceVariable = -99;
+		
+		instance1.staticVariable = 55;
+		
+		instance1.instanceMethod();
+		
+		method1(localVariable1);
+		System.out.println(localVariable1);
+		
+		method2(instance1);
+		System.out.println(instance1.instanceVariable);
+		
+	}
+	
+	static void method1(int arg) {
+		arg = 99999;
+	}
+	
+	static void method2(ExampleClass2 arg) {
+		arg.instanceVariable = 99999;
 	}
 
 }
+
+
+
+
