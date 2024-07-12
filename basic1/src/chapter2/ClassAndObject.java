@@ -15,7 +15,7 @@ class ExampleClass1 {
 	int method1 (int arg1) {
 		// 기능 구현
 		// 반환타입이 void가 아니면 반드시 return으로 결과값을 반환해야 함
-		return 0;
+		return arg1 * arg1;
 	}
 }
 
@@ -79,9 +79,44 @@ public class ClassAndObject {
 
 	public static void main(String[] args) {
 		
+		// 인스턴스 : 특정 클래스로 정의된 것을 실체화한 객체
+		// 클래스명 참조변수명 = new 클래스명();
+		ExampleClass1 instance1 = new ExampleClass1();
+		ExampleClass1 instance2 = new ExampleClass1();
+		
+		// 인스턴스가 가지고 있는 속성 접근 방법
+		// 인스턴스.속성명;
+		instance1.attribute1 = 10;
+		instance2.attribute1 = 20;
+		new ExampleClass1().attribute1 = 30;
+		
+		System.out.println(instance1.attribute1);
+		System.out.println(instance2.attribute1);
+		
+		// 인스턴스가 가지고 있는 메서드 호출 방법
+		// 인스턴스.메서드명(매개변수...);
+		int methodResult = instance1.method1(5);
+		System.out.println(methodResult);
+		
+		SmartPhone iphone1 = new SmartPhone();
+		SmartPhone galaxy1 = new SmartPhone();
+		
+		iphone1.manufacturer = "Apple";
+		iphone1.manufactureDate = "2024-07-12";
+		iphone1.modelName = "아이폰 15 프로";
+		iphone1.telNumber = "010-1234-5678";
+		iphone1.powerStatus = false;
+		
+		System.out.println(iphone1.manufacturer);
+		System.out.println(galaxy1.manufacturer);
+		System.out.println(galaxy1.powerStatus);
+		
 	}
 
 }
+
+
+
 
 
 
