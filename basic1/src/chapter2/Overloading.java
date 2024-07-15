@@ -46,7 +46,7 @@ public class Overloading {
 	public static void main(String[] args) {
 		
 		MyMath math = new MyMath();
-		System.out.println(math.add(4, 5));
+		System.out.println(math.add(4.5, 5));
 		
 		int result = math.add(4, 5);
 		double result2 = math.add(3.5, 2.5);
