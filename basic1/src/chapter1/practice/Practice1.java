@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Practice1 {
+
 	
 	// 사용자로부터 0이상의 정수를 입력받고
 	// 입력받은 정수를 numbers라고하는 배열에 저장함

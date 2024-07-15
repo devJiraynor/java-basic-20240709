@@ -8,7 +8,9 @@ import java.util.Arrays;
 // extends 키워드를 사용하여 확장
 
 // class SubClass extends SuperClass { ... }
-class Human {
+
+// final로 선언된 클래스는 상속하여 확장할 수 없음
+/*final*/ class Human {
 	String name;
 	int age;
 	
@@ -22,7 +24,7 @@ class Human {
 		this.age = 10;
 	}
 	
-	void sayHello() {
+	/*final*/ void sayHello() {
 		System.out.println(name + "가 인사를 합니다.");
 	}
 }
@@ -61,6 +63,24 @@ class SalesMan extends Human {
 		this.sales = sales;
 		// 부모 생성자 호출은 반드시 현재 생성자의 첫번째 구문으로 작성해야 함
 		// super(name);
+	}
+	
+	// 오버라이딩 : 하위 클래스에서 상위 클래스의 메서드를 '재정의' 하는 것
+	// 규칙
+	// 1. 상위 클래스에서 선언된 메서드와 메서드 이름, 매개변수의 조합이 같아야함
+	// 2. 상위 클래스에서 선언된 메서드가 final로 선언되면 재정의가 불가능
+	
+	// @Override : 컴파일러에게 현재 작업이 오버라이딩 작업임을 알려줌
+	@Override
+	// final로 선언된 메서드는 오버라이딩 할 수 없음
+	void sayHello() {
+		super.sayHello();
+		System.out.println(name + "가 자신을 소개합니다.");
+	}
+	
+	// 아래 작업은 오버라이딩이 아니라 오버로딩임
+	void sayHello(String company) {
+		System.out.println(name + "가 " + company + "에서 자신을 소개합니다.");
 	}
 	
 	void sale() {
