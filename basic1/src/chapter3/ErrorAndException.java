@@ -21,6 +21,13 @@ import java.util.Scanner;
 // 개발자가 직접 처리 및 예방할 수 있음
 
 public class ErrorAndException {
+	
+	// throws 키워드로 메서드의 호출부에 예외처리에 대한 강제성을 부여
+	private static void throwException() throws Exception {
+		// throw 키워드로 강제로 예외를 발생
+		// throw new ExcecptionClass("메세지");
+		throw new NullPointerException("강제 예외발생!!!");
+	}
 
 	public static void main(String[] args) {
 		
@@ -43,9 +50,28 @@ public class ErrorAndException {
 			System.out.println("결과 : " + result);
 			
 		} catch(InputMismatchException exception) {
+			
 			System.out.println("정수만 입력해주세요.");
+			
 		} catch(ArithmeticException exception) {
+			
 			System.out.println("0으로 나눌수 없습니다.");
+			
+		} catch(Exception exception) {
+			
+			System.out.println("예외가 발생했습니다.");
+			
+		} finally {
+			// finally 키워드로 예외 발생 유무와 관계없이 실행할 코드를 작성
+			// 대부분 자원의 반환처리 및 연결 종료 처리 작업을 수행
+			scanner.close();
+			System.out.println("Scanner 자원을 반환했습니다.");
+		}
+		
+		try {
+			throwException();
+		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
 		
 		System.out.println("프로그램이 정상적으로 종료되었습니다.");
