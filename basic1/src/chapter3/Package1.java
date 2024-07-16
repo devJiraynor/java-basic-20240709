@@ -45,6 +45,8 @@ public class Package1 {
 		// 거듭제곱 : pow()
 		System.out.println(Math.pow(2, 10));
 		
+		
+		
 	}
 
 }
