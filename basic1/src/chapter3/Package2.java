@@ -1,10 +1,13 @@
 package chapter3;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Package2 {
@@ -73,6 +76,62 @@ public class Package2 {
 		System.out.println(set);
 		set.add("apple");
 		System.out.println(set);
+		
+		// contains() : Set에 특정 요소가 존재하는 확인
+		System.out.println(set.contains("apple"));
+		
+		// remove() : Set에 특정 요소를 제거
+		set.remove("apple");
+		System.out.println(set);
+		
+		// Map : 키와 값이 한 쌍으로 이루어진 요소들의 집합
+		// 키는 중복이 불가능, 값은 중복이 가능
+		Map<String, String> map;
+		
+		// HashMap 구현 클래스 : 검색 속도가 빠름
+		map = new HashMap<>();
+		// TreeMap 구현 클래스 : 키를 정렬하여 저장
+		map = new TreeMap<>();
+		
+		// put() : Map에 키와 값의 쌍을 추가
+		// 만약 동일한 키가 존재하면 원래 값을 덮어씌움
+		map.put("Apple", "사과");
+		System.out.println(map);
+		map.put("Banana", "바나나");
+		System.out.println(map);
+		map.put("Banana", "버네이너");
+		System.out.println(map);
+		
+		// get() : Map에서 특정 키를 가지는 요소를 반환
+		// 존재하지 않는 키를 검색하면 null을 반환
+		System.out.println(map.get("apple"));
+		
+		// containsKey() : Map에 특정 키가 존재하는지 확인
+		System.out.println(map.containsKey("apple"));
+		
+		// remove() : Map에서 특정 키를 가지는 키와 값의 쌍을 제거
+		// 삭제 작업에 성공하면 해당 키의 값을 반환
+		System.out.println(map.remove("Apple"));
+		System.out.println(map);
+		
+		class Human {
+			String name;
+			String address;
+			int age;
+		}
+		
+		Human human1 = new Human();
+		human1.name = "홍길동";
+		human1.address = "부산광역시";
+		human1.age = 20;
+		
+		Map<String, Object> human2 = new HashMap<>();
+		human2.put("naem", "홍길동");
+		human2.put("address", "부산광역시");
+		human2.put("age", 20);
+		
+		// 1. 문제점 : 사용 혹은 추가 작업에 실수 가능성
+		human2.get("name");
 		
 	}
 
