@@ -52,18 +52,57 @@ public class Polymorphism {
 		FootballPlayer footballPlayer = new FootballPlayer("이성계", 24, "대한민국");
 		
 		Human3 human2 = footballPlayer;
-		
 		System.out.println(human2.name);
 		System.out.println(human2.age);
 		// System.out.println(human2.team);
+		// human2.kick();
 		
 		FootballPlay footballPlay = footballPlayer;
 		footballPlay.kick();
 		footballPlay.foul();
+		// System.out.println(footballPlay.name);
+		// System.out.println(footballPlay.age);
+		
+		FootballPlayer footballPlayer2 = (FootballPlayer) human2;
+		System.out.println(footballPlayer2.name);
+		System.out.println(footballPlayer2.age);
+		System.out.println(footballPlayer2.team);
+		footballPlayer2.kick();
+		footballPlayer2.foul();
+		
+		FootballPlayer footballPlayer3 = (FootballPlayer) footballPlay;
+		System.out.println(footballPlayer3.name);
+		System.out.println(footballPlayer3.age);
+		System.out.println(footballPlayer3.team);
+		footballPlayer3.kick();
+		footballPlayer3.foul();
+		
+		FootballPlayer footballPlayer4 = (FootballPlayer) human;
+		System.out.println(footballPlayer4.name);
+		System.out.println(footballPlayer4.age);
+		System.out.println(footballPlayer4.team);
+		footballPlayer4.kick();
+		footballPlayer4.foul();
+		
+		Object object1 = human;
+		Object object2 = footballPlayer;
+		Object object3 = 3;
+	}
+	
+	void method (Object object) {
+		
+		// 매개변수나 반환타입으로 Object 타입을 지정하게 되면 해당 인스턴스 사용시
+		// 문제(강제 다운캐스팅시 타입 불일치)가 발생할 수 있음
+		// 사용을 지양해야함
+		
+		// object;
 		
 	}
 
 }
+
+
+
 
 
 
