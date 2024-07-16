@@ -132,6 +132,10 @@ public class Package2 {
 		
 		// 1. 문제점 : 사용 혹은 추가 작업에 실수 가능성
 		human2.get("name");
+		// 2. 문제점 : 타입의 안정성의 문제
+		int age = (int) human2.get("age");
+		// 3. 문제점 : 데이터 무결성의 문제
+		
 		
 	}
 
